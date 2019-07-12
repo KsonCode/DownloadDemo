@@ -8,6 +8,14 @@ import com.bwie.downloaddemo.download.DownloadCallback;
 
 public class DownloadModel implements DownloadContract.IDownloadModel {
     private DownLoadFile downLoadFile;
+
+    /**
+     * 下载
+     * @param context
+     * @param loadUrl
+     * @param filePath
+     * @param downloadCallback
+     */
     @Override
     public void download(final Context context, String loadUrl, String filePath, final DownloadCallback downloadCallback) {
 
@@ -37,12 +45,18 @@ public class DownloadModel implements DownloadContract.IDownloadModel {
         });
     }
 
+    /**
+     * 暂停
+     */
     @Override
     public void pause() {
 
         downLoadFile.onPause();
     }
 
+    /**
+     * 取消
+     */
     @Override
     public void cancel() {
 
@@ -50,6 +64,9 @@ public class DownloadModel implements DownloadContract.IDownloadModel {
 
     }
 
+    /**
+     * 继续
+     */
     @Override
     public void start() {
 

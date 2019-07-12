@@ -9,6 +9,7 @@ public class DownloadPresenter extends DownloadContract.DownloadPresenter {
     @Override
     public void download(Context mContext, String loadurl, String filepath) {
 
+        //下载
         model.download(mContext, loadurl, filepath, new DownloadCallback() {
             @Override
             public void finish() {
@@ -28,18 +29,27 @@ public class DownloadPresenter extends DownloadContract.DownloadPresenter {
         });
     }
 
+    /**
+     * 暂停
+     */
     @Override
     public void pause() {
 
         model.pause();
     }
 
+    /**
+     * 取消
+     */
     @Override
     public void cancel() {
 
         model.cancel();
     }
 
+    /**
+     * 继续
+     */
     @Override
     public void start() {
 
